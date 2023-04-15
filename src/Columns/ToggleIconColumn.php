@@ -1,6 +1,6 @@
 <?php
 
-namespace Archilex\FilamentFilterSets\Columns;
+namespace Archilex\ToggleIconColumn\Columns;
 
 use Filament\Forms\Components\Concerns\HasToggleColors;
 use Filament\Forms\Components\Concerns\HasToggleIcons;
