@@ -17,6 +17,6 @@ class ToggleIconColumnServiceProvider extends PluginServiceProvider
     {
         $package->name(static::$name)
             ->hasAssets()
-            ->hasViews()
+            ->hasViews();
     }
 }
