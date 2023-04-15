@@ -2,6 +2,7 @@
 
 namespace Archilex\ToggleIconColumn\Columns;
 
+use Closure;
 use Filament\Forms\Components\Concerns\HasToggleColors;
 use Filament\Forms\Components\Concerns\HasToggleIcons;
 use Filament\Support\Actions\Concerns\HasSize;
