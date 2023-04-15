@@ -4,6 +4,8 @@
 [![run-tests](https://github.com/archilex/filament-toggle-icon-column/actions/workflows/run-tests.yml/badge.svg)](https://github.com/archilex/filament-toggle-icon-column/actions/workflows/run-tests.yml)
 [![Total Downloads](https://img.shields.io/packagist/dt/archilex/filament-toggle-icon-column.svg?style=flat-square)](https://packagist.org/packages/archilex/filament-toggle-icon-column)
 
+While developing [Filament Filter Sets](https://filamentphp.com/plugins/filter-sets) I needed a toggleable icon column to give users an easy way to see the status of their filter sets but also interact with them as well. Out of this, Toggle Icon Column was born. 
+
 Toggle Icon Column is a mashup of Filament's interactive Toggle Column and the Icon Column allowing an **icon** to be toggled on or off in a table, with different icons and colors representing it's different states. 
 
 It should be noted that Filament's current Toggle Column is a more obvious and intuitive UX for most people and even supports [icons in the toggle button](https://filamentphp.com/docs/2.x/forms/fields#toggle). However, for some, like myself, Toggle Icon Column will give you a great way to add some visual distinction to your tables.
