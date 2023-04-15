@@ -75,6 +75,6 @@ class ToggleIconColumn extends Column implements Editable
 
     public function getHoverColor(): ?string
     {
-        return $this->evaluate($this->hoverColor) ?? 'success';
+        return $this->evaluate($this->hoverColor) ?? ($this->getState() ? $this->getOffColor() : $this->getOnColor());
     }
 }
