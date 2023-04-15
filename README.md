@@ -44,7 +44,7 @@ You may customize the icon representing each state. Icons are the name of a Blad
 ```php
 use Archilex\ToggleIconColumn\Columns\ToggleIconColumn;
  
-ToggleIconColumn::make('is_locked'),
+ToggleIconColumn::make('is_locked')
     ->onIcon('heroicon-s-lock-open')
     ->offIcon('heroicon-o-lock-closed')
 ```
@@ -56,7 +56,7 @@ The default icon size is `lg`, but you may customize the size to be either `xs`,
 ```php
 use Archilex\ToggleIconColumn\Columns\ToggleIconColumn;
  
-ToggleIconColumn::make('is_locked'),
+ToggleIconColumn::make('is_locked')
     ->size('xl')
 ```
 
@@ -67,19 +67,29 @@ You may customize the icon color representing the `on` or `off` state. These may
 ```php
 use Archilex\ToggleIconColumn\Columns\ToggleIconColumn;
  
-ToggleIconColumn::make('is_locked'),
+ToggleIconColumn::make('is_locked')
     ->onColor('primary')
     ->offColor('secondary')
 ```
 
 ### Customizing the hover color
-You may customize the hover color for the icon. These may be either `primary`, `secondary`, `success`, `warning`, `danger`, or `secondary`. These colors are one shade darker than the `on/off` colors.
+
+By default the hover color will be the inverse of the `on/off` colors. These may also be either `primary`, `secondary`, `success`, `warning`, `danger`, or `secondary`. 
 
 ```php
 use Archilex\ToggleIconColumn\Columns\ToggleIconColumn;
  
-ToggleIconColumn::make('is_locked'),
+ToggleIconColumn::make('is_locked')
     ->hoverColor('success')
+```
+
+For further customization you can call a `Closure`.
+
+```php
+use Archilex\ToggleIconColumn\Columns\ToggleIconColumn;
+ 
+ToggleIconColumn::make('is_locked')
+    ->hoverColor(fn (Model $record) => $record->is_locked ? 'text-gray-300' : 'text-success-500'),
 ```
 
 ### Other options
