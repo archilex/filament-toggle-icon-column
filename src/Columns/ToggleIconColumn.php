@@ -20,7 +20,7 @@ class ToggleIconColumn extends Column implements Editable
 
     protected string|Closure|null $hoverColor = null;
 
-    protected string $view = 'filament-filter-sets::columns.toggle-icon-column';
+    protected string $view = 'filament-toggle-icon-column::columns.toggle-icon-column';
 
     protected function setUp(): void
     {
