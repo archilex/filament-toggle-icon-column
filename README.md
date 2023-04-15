@@ -41,7 +41,7 @@ return $table
 
 ### Customizing the icon
 
-You may customize the icon representing each state. Icons are the name of a Blade component present. By default, Heroicons v1 are installed:
+You may customize the icon representing each state. Heroicons v1 are supported at this time:
 
 ```php
 use Archilex\ToggleIconColumn\Columns\ToggleIconColumn;
@@ -76,7 +76,7 @@ ToggleIconColumn::make('is_locked')
 
 ### Customizing the hover color
 
-By default the hover color will be the inverse of the `on/off` colors. These may also be either `primary`, `secondary`, `success`, `warning`, `danger`, or `secondary`. 
+By default the hover color will be the inverse of the `on/off` colors. These may also be customized to be either `primary`, `secondary`, `success`, `warning`, `danger`, or `secondary`. 
 
 ```php
 use Archilex\ToggleIconColumn\Columns\ToggleIconColumn;
