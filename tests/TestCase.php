@@ -2,11 +2,11 @@
 
 namespace Archilex\ToggleIconColumn\Tests;
 
+use Archilex\ToggleIconColumn\ToggleIconColumnServiceProvider;
 use Filament\FilamentServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Livewire\LivewireServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Archilex\ToggleIconColumn\ToggleIconColumnServiceProvider;
 
 class TestCase extends Orchestra
 {
