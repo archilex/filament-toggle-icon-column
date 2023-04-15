@@ -16,12 +16,12 @@
             default => $stateColor,
         },
         match ($hoverColor) {
-            'danger' => 'text-danger-500',
-            'primary' => 'text-primary-500',
-            'success' => 'text-success-500',
-            'warning' => 'text-warning-500',
-            'secondary' => 'text-gray-300 dark:text-gray-600',
-            null => \Illuminate\Support\Arr::toCssClasses(['text-gray-700', 'dark:text-gray-200' => config('tables.dark_mode'),]),
+            'danger' => 'hover:text-danger-500',
+            'primary' => 'hover:text-primary-500',
+            'success' => 'hover:text-success-500',
+            'warning' => 'hover:text-warning-500',
+            'secondary' => 'hover:text-gray-300 dark:text-gray-600',
+            null => \Illuminate\Support\Arr::toCssClasses(['hover:text-gray-700', 'dark:hover:text-gray-200' => config('tables.dark_mode'),]),
             default => 'hover:'.$hoverColor,
         },
         match ($size) {
