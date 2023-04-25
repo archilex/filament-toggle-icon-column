@@ -35,81 +35,61 @@
     ]);
 @endphp
 
-<div
-    x-data="{
-        error: undefined,
-        state: @js((bool) $state),
-        isLoading: false,
-    }"
-    x-init="
-        $watch('state', () => $refs.button?.dispatchEvent(new Event('change')))
-
-        Livewire.hook('message.processed', (component) => {
-            if (component.component.id !== @js($this->id)) {
-                return
-            }
-
-            if (! $refs.newState) {
-                return
-            }
-
-            let newState = $refs.newState.value === '1' ? true : false
-
-            if (state === newState) {
-                return
-            }
-
-            state = newState
-        })
-    "
-    {{ $attributes->merge($getExtraAttributes())->class([
-        'filament-tables-toggle-column',
-    ]) }}
->
-    <input
-        type="hidden"
-        value="{{ $state ? 1 : 0 }}"
-        x-ref="newState"
-    />
-
-    <button
-        role="switch"
-        aria-checked="false"
-        x-bind:aria-checked="state.toString()"
-        x-on:click="! isLoading && (state = ! state)"
-        x-ref="button"
-        x-on:change="
-            isLoading = true
-            response = await $wire.updateTableColumnState(@js($getName()), @js($recordKey), state)
-            error = response?.error ?? undefined
-            isLoading = false
-        "
-        x-tooltip="error"
-        x-bind:class="{
-            'opacity-50 pointer-events-none': isLoading,
+<div wire:key="{{ 'toggle-icon-column-' . $recordKey . '-' . $getName() . '-' . json_encode($state) }}">
+    <div
+        x-data="{
+            error: undefined,
+            state: @js((bool) $state),
+            isLoading: false,
         }"
-        {!! $isDisabled() ? 'disabled' : null !!}
-        wire:ignore.self
-        type="button"
-        class="items-center justify-center flex shrink-0 h-10 w-10 border-transparent cursor-pointer outline-none disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none"
+        {{ $attributes->merge($getExtraAttributes())->class([
+            'filament-tables-toggle-column',
+        ]) }}
+        wire:ignore
     >
-        
-        <span
-            {{
-                $attributes
-                    ->merge($getExtraAttributes())
-                    ->class([
-                        "filament-tables-toggle-icon-column filament-tables-toggle-icon-column-size-{$size}",
-                        '' => ! $isInline(),
-                    ])
-            }}
+        <button
+            role="switch"
+            aria-checked="false"
+            x-bind:aria-checked="state.toString()"
+            x-on:click="
+                if (isLoading) return
+
+                isLoading = true
+                response = await $wire.updateTableColumnState(@js($getName()), @js($recordKey), ! state)
+                error = response?.error ?? undefined
+
+                if (error) {
+                    return isLoading = false
+                }
+
+                state = ! state
+                isLoading = false
+            "
+            x-tooltip="error"
+            x-bind:class="{
+                'opacity-50 pointer-events-none': isLoading,
+            }"
+            {!! $isDisabled() ? 'disabled' : null !!}
+            type="button"
+            class="items-center justify-center flex shrink-0 h-10 w-10 border-transparent cursor-pointer outline-none disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none"
         >
-            @if ($stateIcon)
-                <x-dynamic-component
-                    :component="$stateIcon"
-                    :class="$iconClasses"
-                />
-            @endif
-        </span>
-    </button>
+            <span
+                {{
+                    $attributes
+                        ->merge($getExtraAttributes())
+                        ->class([
+                            "filament-tables-toggle-icon-column filament-tables-toggle-icon-column-size-{$size}",
+                            '' => ! $isInline(),
+                        ])
+                }}
+            >
+                @if ($stateIcon)
+                    <x-dynamic-component
+                        :component="$stateIcon"
+                        :class="$iconClasses"
+                    />
+                @endif
+            </span>
+        </button>
+    </div>
 </div>
