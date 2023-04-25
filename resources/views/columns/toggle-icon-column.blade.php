@@ -35,7 +35,7 @@
     ]);
 @endphp
 
-<div wire:key="{{ 'toggle-icon-column-' . $recordKey . '-' . $getName() . '-' . json_encode($state) }}">
+<div wire:key="{{ $this->id }}.table.record.{{ $recordKey }}.column.{{ $getName() }}.toggle-icon-column.{{ json_encode($state) }}">
     <div
         x-data="{
             error: undefined,
