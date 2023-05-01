@@ -35,7 +35,7 @@
     ]);
 @endphp
 
-<div wire:key="{{ $this->id }}.table.record.{{ $recordKey }}.column.{{ $getName() }}.toggle-icon-column.{{ json_encode($state) }}">
+<div wire:key="{{ $this->id }}.table.record.{{ $recordKey }}.column.{{ $getName() }}.toggle-column.{{ $state ? 'true' : 'false' }}">
     <div
         x-data="{
             error: undefined,
@@ -43,7 +43,7 @@
             isLoading: false,
         }"
         {{ $attributes->merge($getExtraAttributes())->class([
-            'filament-tables-toggle-column',
+            'filament-toggle-icon-column',
         ]) }}
         wire:ignore
     >
@@ -52,17 +52,20 @@
             aria-checked="false"
             x-bind:aria-checked="state.toString()"
             x-on:click="
-                if (isLoading) return
-
-                isLoading = true
-                response = await $wire.updateTableColumnState(@js($getName()), @js($recordKey), ! state)
-                error = response?.error ?? undefined
-
-                if (error) {
-                    return isLoading = false
+                if (isLoading) {
+                    return
                 }
 
                 state = ! state
+
+                isLoading = true
+                response = await $wire.updateTableColumnState(@js($getName()), @js($recordKey), state)
+                error = response?.error ?? undefined
+
+                if (error) {
+                    state = ! state
+                }
+
                 isLoading = false
             "
             x-tooltip="error"
@@ -78,7 +81,7 @@
                     $attributes
                         ->merge($getExtraAttributes())
                         ->class([
-                            "filament-tables-toggle-icon-column filament-tables-toggle-icon-column-size-{$size}",
+                            "filament-toggle-icon-column-size-{$size}",
                             '' => ! $isInline(),
                         ])
                 }}
