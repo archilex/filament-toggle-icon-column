@@ -10,10 +10,6 @@ Toggle Icon Column is a mashup of Filament's interactive Toggle Column and the I
 
 It should be noted that Filament's current Toggle Column is a more obvious and intuitive UX for most people and even supports [icons in the toggle button](https://filamentphp.com/docs/2.x/forms/fields#toggle). However, for some, like myself, Toggle Icon Column will give you a great way to add some visual distinction to your tables.
 
-## Bug notice
-
-As Toggle Icon Column uses the same code base as the current Toggle Column implementation, it also shares the same [bugs](https://github.com/filamentphp/filament/issues/6215). [One PR](https://github.com/filamentphp/filament/pull/6198) is already implemented in this code base, which fixes the console errors. As the Toggle Column gets updated, I will update this package as well.
-
 ## Installation
 
 You can install the package via composer:
