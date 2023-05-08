@@ -3,9 +3,9 @@
 namespace Archilex\ToggleIconColumn\Columns;
 
 use Closure;
+use Filament\Actions\Concerns\HasSize;
 use Filament\Forms\Components\Concerns\HasToggleColors;
 use Filament\Forms\Components\Concerns\HasToggleIcons;
-use Filament\Actions\Concerns\HasSize;
 use Filament\Tables\Columns\Column;
 use Filament\Tables\Columns\Concerns\CanBeValidated;
 use Filament\Tables\Columns\Concerns\CanUpdateState;

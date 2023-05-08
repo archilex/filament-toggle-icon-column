@@ -15,9 +15,9 @@ class ToggleIconColumnPlugin implements Plugin
     }
 
     public function register(Context $context): void
-    {    
+    {
         FilamentAsset::register([
-            Css::make('filament-toggle-icon-column', __DIR__ . '/../resources/dist/filament-toggle-icon-column.css'),
+            Css::make('filament-toggle-icon-column', __DIR__.'/../resources/dist/filament-toggle-icon-column.css'),
         ], 'filament-toggle-icon-column');
     }
 
