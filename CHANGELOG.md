@@ -2,6 +2,12 @@
 
 All notable changes to `filament-toggle-icon-column` will be documented in this file.
 
+## v2.0.1-alpha - 2023-05-09
+
+Fixes dark colors
+
+**Full Changelog**: https://github.com/archilex/filament-toggle-icon-column/compare/v1.0.5...v2.0.1-alpha
+
 ## v1.0.5 - 2023-05-01
 
 ### What's Changed
