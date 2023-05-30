@@ -123,6 +123,8 @@ Please see [CONTRIBUTING](.github/CONTRIBUTING.md) for details.
 
 Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
 
+## Other Filament Plugins
+
 Check out my other Filament Plugins:
 
 - [Filter Sets](https://filamentphp.com/plugins/filter-sets): Save your filters, search query, column order, and column search queries into easily accessible filter sets
