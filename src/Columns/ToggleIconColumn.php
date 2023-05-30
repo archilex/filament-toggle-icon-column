@@ -19,7 +19,7 @@ class ToggleIconColumn extends Column implements Editable
     use HasToggleIcons;
     use HasSize;
 
-    protected string|Closure|null $hoverColor = null;
+    protected string | Closure | null $hoverColor = null;
 
     protected string $view = 'filament-toggle-icon-column::columns.toggle-icon-column';
 
@@ -66,7 +66,7 @@ class ToggleIconColumn extends Column implements Editable
         return $this->evaluate($this->onIcon) ?? 'heroicon-o-check-circle';
     }
 
-    public function hoverColor(string|Closure|null $color = null): static
+    public function hoverColor(string | Closure | null $color = null): static
     {
         $this->hoverColor = $color;
 
