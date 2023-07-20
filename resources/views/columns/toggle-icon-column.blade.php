@@ -5,11 +5,23 @@
     $stateIcon = $getStateIcon();
     $hoverColor = $getHoverColor();
 
+    $iconSize ??= $size;
+
+    $iconSize = match ($iconSize) {
+        'xs' => 'h-3 w-3',
+        'sm' => 'h-4 w-4',
+        'md' => 'h-5 w-5',
+        'lg' => 'h-6 w-6',
+        'xl' => 'h-7 w-7',
+        default => $iconSize,
+    };
+
     $iconClasses = \Illuminate\Support\Arr::toCssClasses([
         match ($stateColor) {
             'danger' => 'text-danger-500',
             'primary' => 'text-primary-500',
             'success' => 'text-success-500',
+            'info' => 'text-info-500',
             'warning' => 'text-warning-500',
             'secondary' => 'text-gray-300 dark:text-gray-600',
             null => 'text-gray-700 dark:text-gray-200',
@@ -19,18 +31,11 @@
             'danger' => 'hover:text-danger-500 dark:hover:text-danger-500',
             'primary' => 'hover:text-primary-500 dark:hover:text-primary-500',
             'success' => 'hover:text-success-500 dark:hover:text-success-500',
+            'info' => 'hover:text-info-500 dark:hover:text-info-500',
             'warning' => 'hover:text-warning-500 dark:hover:text-warning-500',
             'secondary' => 'hover:text-gray-300 dark:hover:text-gray-600',
             null => 'hover:text-gray-700 dark:hover:text-gray-200',
             default => 'hover:'.$hoverColor,
-        },
-        match ($size) {
-            'xs' => 'h-3 w-3',
-            'sm' => 'h-4 w-4',
-            'md' => 'h-5 w-5',
-            'lg' => 'h-6 w-6',
-            'xl' => 'h-7 w-7',
-            default => null,
         },
     ]);
 @endphp
@@ -87,10 +92,12 @@
                 }}
             >
                 @if ($stateIcon)
-                    <x-dynamic-component
-                        :component="$stateIcon"
+                    
+                    <x-filament::icon
+                        :name="$stateIcon"
+                        :size="$iconSize"
                         :class="$iconClasses"
-                    />
+                    />                    
                 @endif
             </span>
         </button>
