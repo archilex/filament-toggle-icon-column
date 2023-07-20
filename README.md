@@ -60,7 +60,7 @@ ToggleIconColumn::make('is_locked')
 
 ### Customizing the color
 
-You may customize the icon color representing the `on` or `off` state. These may be either `primary`, `secondary`, `success`, `warning`, `danger`, or `secondary`:
+You may customize the icon color representing the `on` or `off` state. These may be either `primary`, `secondary`, `success`, `info`, `warning`, `danger`, or `secondary`:
 
 ```php
 use Archilex\ToggleIconColumn\Columns\ToggleIconColumn;
@@ -72,7 +72,7 @@ ToggleIconColumn::make('is_locked')
 
 ### Customizing the hover color
 
-By default the hover color will be the inverse of the `on/off` colors. These may also be customized to be either `primary`, `secondary`, `success`, `warning`, `danger`, or `secondary`. 
+By default the hover color will be the inverse of the `on/off` colors. These may also be customized to be either `primary`, `secondary`, `success`, `info`, `warning`, `danger`, or `secondary`. 
 
 ```php
 use Archilex\ToggleIconColumn\Columns\ToggleIconColumn;
