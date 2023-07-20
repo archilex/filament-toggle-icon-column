@@ -2,10 +2,10 @@
 
 namespace Archilex\ToggleIconColumn;
 
+use Filament\Support\Assets\Css;
+use Filament\Support\Facades\FilamentAsset;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Filament\Support\Facades\FilamentAsset;
-use Filament\Support\Assets\Css;
 
 class ToggleIconColumnServiceProvider extends PackageServiceProvider
 {

@@ -66,7 +66,7 @@ class ToggleIconColumn extends Column implements Editable
         return $this->evaluate($this->onIcon) ?? 'heroicon-o-check-circle';
     }
 
-    public function hoverColor(string|Closure|null $color = null): static
+    public function hoverColor(string|Closure $color = null): static
     {
         $this->hoverColor = $color;
 
