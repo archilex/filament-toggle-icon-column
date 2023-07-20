@@ -37,7 +37,7 @@ return $table
 
 ### Customizing the icon
 
-You may customize the icon representing each state. Heroicons v1 are supported at this time:
+You may customize the icon representing each state. Heroicons v2 are supported at this time:
 
 ```php
 use Archilex\ToggleIconColumn\Columns\ToggleIconColumn;
@@ -122,6 +122,13 @@ Please see [CONTRIBUTING](.github/CONTRIBUTING.md) for details.
 ## Security Vulnerabilities
 
 Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
+
+## Other Filament Plugins
+
+Check out my other Filament Plugins:
+
+- [Filter Sets](https://filamentphp.com/plugins/filter-sets): Let your users save their filters, search query, column order, column searches, and more into easily accessible filter sets.
+- [Stacked Image Column](https://filamentphp.com/plugins/stacked-image-column): Display multiple images as a stack in your Filament tables.
 
 ## Credits
 
