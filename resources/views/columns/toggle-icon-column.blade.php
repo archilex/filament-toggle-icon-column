@@ -97,7 +97,7 @@
             >
                 @if ($stateIcon)
                     <x-filament::icon
-                        :name="$stateIcon"
+                        :icon="$stateIcon"
                         :size="$iconSize"
                         :class="$iconClasses . ' ' . $iconSize"
                     />                    
