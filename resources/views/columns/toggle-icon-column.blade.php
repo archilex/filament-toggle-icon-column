@@ -17,6 +17,14 @@
     };
 
     $iconClasses = \Illuminate\Support\Arr::toCssClasses([
+        match ($iconSize) {
+            'xs' => 'h-3 w-3',
+            'sm' => 'h-4 w-4',
+            'md' => 'h-5 w-5',
+            'lg' => 'h-6 w-6',
+            'xl' => 'h-7 w-7',
+            default => $iconSize,
+        },
         match ($stateColor) {
             'danger' => 'text-danger-500',
             'primary' => 'text-primary-500',
@@ -40,17 +48,21 @@
     ]);
 @endphp
 
-<div wire:key="{{ $this->id }}.table.record.{{ $recordKey }}.column.{{ $getName() }}.toggle-column.{{ $state ? 'true' : 'false' }}">
+<div 
+    wire:key="{{ $this->getId() }}.table.record.{{ $recordKey }}.column.{{ $getName() }}.toggle-column.{{ $state ? 'true' : 'false' }}"
+>
     <div
         x-data="{
             error: undefined,
             state: @js((bool) $state),
             isLoading: false,
         }"
-        {{ $attributes->merge($getExtraAttributes())->class([
-            'filament-toggle-icon-column',
-        ]) }}
         wire:ignore
+        {{ 
+            $attributes
+                ->merge($getExtraAttributes(), escape: false)
+                ->class(['filament-toggle-icon-column'])
+        }}
     >
         <button
             role="switch"
@@ -77,22 +89,21 @@
             x-bind:class="{
                 'opacity-50 pointer-events-none': isLoading,
             }"
-            {!! $isDisabled() ? 'disabled' : null !!}
+            @disabled($isDisabled())
             type="button"
-            class="items-center justify-center flex shrink-0 h-10 w-10 border-transparent cursor-pointer outline-none disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none"
+            class="items-center justify-center inline-flex shrink-0 h-10 w-10 border-transparent cursor-pointer outline-none disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none"
         >
             <span
                 {{
                     $attributes
-                        ->merge($getExtraAttributes())
+                        ->merge($getExtraAttributes(), escape: false)
                         ->class([
-                            "filament-toggle-icon-column-size-{$size}",
+                            "flex flex-wrap gap-1 filament-toggle-icon-column-size-{$size}",
                             '' => ! $isInline(),
                         ])
                 }}
             >
                 @if ($stateIcon)
-                    
                     <x-filament::icon
                         :name="$stateIcon"
                         :size="$iconSize"
