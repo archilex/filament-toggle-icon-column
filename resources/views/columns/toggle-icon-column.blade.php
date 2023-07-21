@@ -17,14 +17,6 @@
     };
 
     $iconClasses = \Illuminate\Support\Arr::toCssClasses([
-        match ($iconSize) {
-            'xs' => 'h-3 w-3',
-            'sm' => 'h-4 w-4',
-            'md' => 'h-5 w-5',
-            'lg' => 'h-6 w-6',
-            'xl' => 'h-7 w-7',
-            default => $iconSize,
-        },
         match ($stateColor) {
             'danger' => 'text-danger-500',
             'primary' => 'text-primary-500',
@@ -107,7 +99,7 @@
                     <x-filament::icon
                         :name="$stateIcon"
                         :size="$iconSize"
-                        :class="$iconClasses"
+                        :class="$iconClasses . ' ' . $iconSize"
                     />                    
                 @endif
             </span>
