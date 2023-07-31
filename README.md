@@ -1,6 +1,6 @@
 # A Toggle Icon Column for Filament
 
-While developing [Filter Sets](https://filamentphp.com/plugins/kenneth-sese-filter-sets), a premium Filament plugin that lets you save your existing filters into one easily accessible filter set, I needed a toggleable icon column to give users an easy way to see the status of their filter sets and interact with them as well. Out of this, Toggle Icon Column was born. 
+While developing [Filter Sets](/plugins/kenneth-sese-filter-sets), a premium Filament plugin that lets you save your existing filters into one easily accessible filter set, I needed a toggleable icon column to give users an easy way to see the status of their filter sets and interact with them as well. Out of this, Toggle Icon Column was born. 
 
 Toggle Icon Column is a mashup of Filament's interactive Toggle Column and the Icon Column allowing an **icon** to be toggled on or off in a table, with different icons and colors representing it's different states. 
 
@@ -123,8 +123,8 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 Check out my other Filament Plugins:
 
-- [Filter Sets](https://filamentphp.com/plugins/kenneth-sese-filter-sets): Let your users combine their filters, searches, column order, and more into convenient and easily accessible filter sets.
-- [Stacked Image Column](https://filamentphp.com/plugins/kenneth-sese-stacked-image-column): Display multiple images as a stack in your Filament tables.
+- [Filter Sets](/plugins/kenneth-sese-filter-sets): Let your users combine their filters, searches, column order, and more into convenient and easily accessible filter sets.
+- [Stacked Image Column](/plugins/kenneth-sese-stacked-image-column): Display multiple images as a stack in your Filament tables.
 
 ## Credits
 
