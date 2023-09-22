@@ -15,9 +15,9 @@ class ToggleIconColumn extends Column implements Editable
 {
     use CanBeValidated;
     use CanUpdateState;
+    use HasSize;
     use HasToggleColors;
     use HasToggleIcons;
-    use HasSize;
 
     protected string|Closure|null $hoverColor = null;
 
