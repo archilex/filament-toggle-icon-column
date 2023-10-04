@@ -20,6 +20,27 @@ Optionally, you can publish the views using
 php artisan vendor:publish --tag="filament-toggle-icon-column-views"
 ```
 
+Filament v3 recommends developers [create a custom theme](https://filamentphp.com/docs/3.x/panels/themes#creating-a-custom-theme) to better support a plugin's additional Tailwind classes. After you have created your custom theme, add Toggle Icon Columns' views to your *new theme's* `tailwind.config.js` file usually located in `resources/css/filament/admin/tailwind.config.js`:
+
+```js
+content: [
+    ...
+    './vendor/archilex/filament-toggle-icon-column/**/*.php',
+],
+```
+
+Next, compile your theme:
+
+```bash 
+npm run build
+```
+
+Finally, run the Filament upgrade command:
+
+```bash
+php artisan filament:upgrade
+```
+
 ## Usage
 
 ```php
@@ -123,7 +144,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 Check out my other Filament Plugins:
 
-- [Filter Sets](https://filamentphp.com/plugins/kenneth-sese-filter-sets): Let your users combine their filters, searches, column order, and more into convenient and easily accessible filter sets.
+- [Advanced Tables (formerly Filter Sets)](https://filamentphp.com/plugins/kenneth-sese-filter-sets): Let your users combine their filters, searches, column order, and more into convenient and easily accessible filter sets.
 - [Stacked Image Column](https://filamentphp.com/plugins/kenneth-sese-stacked-image-column): Display multiple images as a stack in your Filament tables.
 
 ## Credits
