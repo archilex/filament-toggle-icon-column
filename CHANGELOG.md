@@ -2,6 +2,14 @@
 
 All notable changes to `filament-toggle-icon-column` will be documented in this file.
 
+## v3.1.1 - 2024-03-10
+
+### What's Changed
+
+* Update update-changelog.yml by @archilex in https://github.com/archilex/filament-toggle-icon-column/pull/36
+
+**Full Changelog**: https://github.com/archilex/filament-toggle-icon-column/compare/v3.1.0...v3.1.1
+
 ## v1.0.5 - 2023-05-01
 
 ### What's Changed
