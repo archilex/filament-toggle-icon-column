@@ -2,6 +2,16 @@
 
 All notable changes to `filament-toggle-icon-column` will be documented in this file.
 
+## v3.2.0 - 2025-02-25
+
+### What's Changed
+
+* Bump aglipanci/laravel-pint-action from 2.3.1 to 2.4 by @dependabot in https://github.com/archilex/filament-toggle-icon-column/pull/38
+* Laravel 12 by @archilex in https://github.com/archilex/filament-toggle-icon-column/pull/42
+* Bump dependabot/fetch-metadata from 1.6.0 to 2.2.0 by @dependabot in https://github.com/archilex/filament-toggle-icon-column/pull/40
+
+**Full Changelog**: https://github.com/archilex/filament-toggle-icon-column/compare/v3.1.1...v3.2.0
+
 ## v3.1.1 - 2024-03-10
 
 ### What's Changed
